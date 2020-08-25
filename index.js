@@ -70,7 +70,7 @@ const valtozok = [
 
 setInterval(function() {
     const index = Math.floor(Math.random() * (valtozok.length - 1) + 1);
-     client.user.setActivity(valtozok[index], {type: "WATCHING"});
+     client.user.setActivity(valtozok[index], {type: "STREAMING", url:"https://www.twitch.tv/thepresidentsofficial"}));
 }, 3000);
 });
 
