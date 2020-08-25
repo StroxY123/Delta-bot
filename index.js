@@ -56,21 +56,23 @@ client.registry.registerCommandsIn(__dirname + "/commands");
 //Indulooo ---------------------------------------------------------------
 client.on("ready", () => {
   console.log(".");
-  client.user.setActivity("📈The Chat📉", {type: "WATCHING"});
+  //client.user.setActivity("📈The Chat📉", {type: "WATCHING"});
 });
 //Státusz jelzés ---------------------------------------------------------
 
-let activNum = 0;
+client.on("ready", async () => {
+const valtozok = [
+    "",
+    `?`,
+    `?ping`,
+    `Bot neve: MateHUn a legjobb!`
+]
 
 setInterval(function() {
- if (activNum ===0) {
-    client.user.setActivity("🔵 Élőadás itt:", {type: "STREAMING", url:"https://www.twitch.tv/thepresidentsofficial"}); 
-    activNum = 1;
-  } else if (activNum === 1) {
-    client.user.setActivity("🔴 Élőadás itt:", {type: "STREAMING", url:"https://www.twitch.tv/thepresidentsofficial"}); 
-    activNum = 0;
-  }
-}, 3* 1000);
+    const index = Math.floor(Math.random() * (valtozok.length - 1) + 1);
+     client.user.setActivity(valtozok[index], {type: "WATCHING"});
+}, 3000);
+});
 
 
 //Státusz jelzés vége ----------------------------------------------------
